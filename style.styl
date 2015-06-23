@@ -132,7 +132,7 @@ header
 				content '\A' 
 				white-space pre
 		.tree
-			border 1px solid main_grey
+			border 1px solid form_font_grey
 			height 400px
 			background-color #fff
 			-webkit-box-shadow inset 0 0 5px 0 rgba(0,0,0,.3);
@@ -181,16 +181,30 @@ header
 					padding-right 4px
 					color main_darkgrey
 					cursor pointer
+					
 	
 			input
 				border none
 				width 100%
 				font-size 20px	
 			input:focus
-				outline none	
+				outline none
+		#status
+			select
+				span(.4)
+		#params
+			select
+				span(.4)
+			input
+				col(.583, offset: .025)
+				padding 7px 0
+				border 1px solid form_font_grey				
+				-webkit-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
+				-moz-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
+				box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 		.close
-			span(.033)
-			padding 1.6%
+			span(.022)
+			padding 1.1%
 			box-sizing border-box
 			background url(images/delete_sprite.png) 0 0 no-repeat;
 			-webkit-background-size 200%
@@ -211,6 +225,11 @@ header
 	font-size 1.86em
 	padding-bottom 0.3em
 	color form_font_grey
+.error
+	col(.1875, offset: 1/16, gutter: 1/32)
+	font-size 1.86em
+	padding-bottom 0.3em
+	color rgba(255,0,0,.0)
 .form_measure
 	width 100%
 	float left

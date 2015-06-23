@@ -78,6 +78,7 @@
 					<input type="text">
 				</div>
 				<div class="close"></div>
+				<div class="error">Некорретно введён тип. Попробуйте снова.</div>
 			</li>
 			<li id="params">
 				<span class="form_action">Параметр:</span>
@@ -142,12 +143,11 @@
 		tag.set = ['Гипермаркет', 'Магазин'];
 		tag.showError = function(el) {
 			if(!this.errorDiv)
-			//this.errorDiv = $($(el).el().parentNode.parentNode).append('div').insertText('error').style('color', 'red');
-			alert('Некорретно введён тип. Пожалуйста, попробуйте снова.');
+				this.errorDiv = $$('error').style('color', 'rgba(255,0,0,.3)');
 		};
 		tag.cancelError = function(el) {
 			if(this.errorDiv) {
-				this.errorDiv.el().parentNode.removeChild(this.errorDiv.el());
+				this.errorDiv = $$('error').style('color', 'rgba(255,0,0,.0)');
 				this.errorDiv = void 0;
 			}
 		};

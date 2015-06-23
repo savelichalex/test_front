@@ -398,7 +398,7 @@ header .menu__border {
   white-space: pre;
 }
 .form .form_lines .tree {
-  border: 1px solid #656565;
+  border: 1px solid #a29f96;
   height: 400px;
   background-color: #fff;
   -webkit-box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.3);
@@ -473,15 +473,74 @@ header .menu__border {
 .form .form_lines #tt_input input:focus {
   outline: none;
 }
+.form .form_lines #status select {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 40%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.form .form_lines #status select:before,
+.form .form_lines #status select:after {
+  content: '';
+  display: table;
+}
+.form .form_lines #status select:after {
+  clear: both;
+}
+.form .form_lines #params select {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 40%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.form .form_lines #params select:before,
+.form .form_lines #params select:after {
+  content: '';
+  display: table;
+}
+.form .form_lines #params select:after {
+  clear: both;
+}
+.form .form_lines #params input {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 57.049%;
+  margin-left: 2.575%;
+  margin-right: 3%;
+  padding: 7px 0;
+  border: 1px solid #a29f96;
+  -webkit-box-shadow: inset 0 1px 10px rgba(0,0,0,0.12);
+  -moz-box-shadow: inset 0 1px 10px rgba(0,0,0,0.12);
+  box-shadow: inset 0 1px 10px rgba(0,0,0,0.12);
+}
+.form .form_lines #params input:before,
+.form .form_lines #params input:after {
+  content: '';
+  display: table;
+}
+.form .form_lines #params input:after {
+  clear: both;
+}
+.form .form_lines #params input:last-child {
+  margin-right: 0%;
+}
 .form .form_lines .close {
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 3.3%;
+  width: 2.2%;
   margin-left: 0%;
   margin-right: 0%;
-  padding: 1.6%;
+  padding: 1.1%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -533,6 +592,29 @@ header .menu__border {
   clear: both;
 }
 .form_description__right:last-child {
+  margin-right: 0%;
+}
+.error {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 18.724609375%;
+  margin-left: 6.251953125%;
+  margin-right: 0.03125%;
+  font-size: 1.86em;
+  padding-bottom: 0.3em;
+  color: rgba(255,0,0,0);
+}
+.error:before,
+.error:after {
+  content: '';
+  display: table;
+}
+.error:after {
+  clear: both;
+}
+.error:last-child {
   margin-right: 0%;
 }
 .form_measure {
