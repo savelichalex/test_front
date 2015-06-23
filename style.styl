@@ -1,0 +1,266 @@
+@import 'jeet'
+@import 'axis'
+
+@font-face
+	font-family PTSans
+	font-style normal
+	src url(fonts/PT-Sans/PTS55F.ttf)
+	
+l-offset = 3.125%
+main_grey = #656565
+main_darkgrey = #5A5A5A
+main_white = #a3a3a3
+counter_color = #fed44c
+form_color = #F2EAD1
+form_font_grey = #a29f96
+form_font_blue = #3472da
+
+normalize-css()
+
+//edit()
+
+*
+	font-family PTSans
+body
+	font-size 62.5%
+
+header
+	cf()
+	background-color main_grey
+	-webkit-box-shadow 0 1px 5px main_white
+	-moz-box-shadow 0 1px 5px main_white
+	box-shadow 0 1px 5px main_white
+			
+	ul
+		list-style none	
+	#logo
+		float left
+		margin-left l-offset
+		width 2*l-offset
+		margin-right 1em	
+	li
+		float: left
+		font-size 1.86em
+		color white
+		padding 0.5em
+		margin 0.7em 1em 0 1em
+		cursor pointer
+	.menu_button__notactive
+		padding 0.5em 0 0 0
+		margin 0.7em 1.5em 0 1.5em
+		span
+			border-bottom 1px solid main_white
+	.menu_button__notactive::after
+		content attr(value)
+		position relative
+		left 0.4em
+		top -0.1em
+		font-size 0.8em
+		font-weight bold
+		background-color counter_color
+		padding 3px 6px 2px 6px
+		color main_grey
+		-webkit-border-radius 6px
+		-moz-border-radius 6px
+		border-radius 6px
+		
+	.menu_button__active
+		background-color main_darkgrey
+		-webkit-border-radius 0.8em
+		-moz-border-radius 0.8em
+		border-radius 0.8em
+		-webkit-box-shadow inset 0 0 5px rgba(0,0,0,.1), 
+						   0 2px 2px -1px rgba(255,255,255,.2)
+		-moz-box-shadow inset 0 0 5px rgba(0,0,0,.1), 
+						0 2px 2px -1px rgba(255,255,255,.2)
+		box-shadow inset 0 0 5px rgba(0,0,0,.1), 
+				   0 2px 2px -1px rgba(255,255,255,.2)
+	.menu__border
+		float left
+		width 100%
+		border-top 2px solid main_white
+		border-bottom 1px solid main_grey
+		
+.description
+	col(.6875, offset: 1/32)
+	float: none
+	margin-bottom 4em
+	
+	h3
+		font-size 3.6em
+		
+	p
+		font-size 1.86em
+		margin-top 0
+		margin-bottom 0
+		
+.form
+	width 100%
+	background-color form_color
+	cf()
+	
+	.form_lines
+		col(.9375, offset: 1/32)
+		list-style none
+		padding 0
+		margin-top 0
+		margin-right 0
+		
+		li
+			width 100%
+			overflow hidden
+			cf()
+			-webkit-transition height .5s
+			-moz-transition height .5s
+			-ms-transition height .5s
+			-o-transition height .5s
+			transition height .5s
+		
+		.form_action
+			span(.178)
+			font-size 1.86em
+		.form_input
+			col(.489, offset: .0333, gutter: 1)
+			font-size 1.86em
+			
+			fieldset
+				border none
+				padding-left 2em
+			fieldset:first-child
+				padding-left 0.5em		
+			label:after
+				content '\A' 
+				white-space pre
+		.tree
+			border 1px solid main_grey
+			height 400px
+			background-color #fff
+			-webkit-box-shadow inset 0 0 5px 0 rgba(0,0,0,.3);
+			-moz-box-shadow inset 0 0 5px 0 rgba(0,0,0,.3);
+			box-shadow inset 0 0 5px 0 rgba(0,0,0,.3);
+			overflow auto
+			line-height 1.7em
+			
+			label
+				cursor pointer
+			
+			.big_region_title 
+				span
+					font-weight bold
+					border-bottom 1px dotted #000
+					margin-left 0.5em					
+			.middle_region_title				
+				span
+					border-bottom 1px dotted #000
+					margin-left 0.5em			
+			.little_region_title
+				span
+					margin-left 0.5em					
+		.close
+			span(.033)
+			padding 1.6%
+			box-sizing border-box
+			background url(images/delete_sprite.png) 0 0 no-repeat;
+			-webkit-background-size 200%
+			background-size 200%
+			cursor pointer
+		.close:hover
+			background url(images/delete_sprite.png) 100% 0 no-repeat;
+			-webkit-background-size 200%
+			background-size 200%
+	
+.form_description__top
+	color form_font_grey
+	font-size 1.86em
+	margin-left l-offset
+	
+.form_description__right
+	col(.1875, offset: 1/16, gutter: 1/32)
+	font-size 1.86em
+	padding-bottom 0.3em
+	color form_font_grey
+.form_measure
+	width 100%
+	float left
+	border-top 2px dashed form_font_grey
+	padding 3em 0
+	cf()
+	ul
+		span(.679)
+		list-style none
+		li
+			width auto
+			float left
+			font-size 1.86em
+			color form_font_blue
+			padding 0.3em 0.5em
+			margin-right 1em
+			border 1px dotted form_font_blue
+			-webkit-border-radius 5px
+			-moz-border-radius 5px
+			border-radius 5px
+			cursor pointer
+		li:hover
+			background-color rgba(255,255,255,.7)
+		.region::before
+			content " "
+			background-image url('images/region.png')
+			-webkit-background-size cover
+			background-size cover
+			position relative
+			top 2px
+			float left
+			height 20px
+			width 20px
+			margin-right 0.5em
+		.status::before
+			content " "
+			background-image url('images/status.png')
+			-webkit-background-size cover
+			background-size cover
+			position relative
+			top 2px
+			float left
+			height 20px
+			width 20px
+			margin-right 0.5em
+		.tt::before
+			content " "
+			background-image url('images/tt.png')
+			-webkit-background-size cover
+			background-size cover
+			position relative
+			top 2px
+			float left
+			height 20px
+			width 20px
+			margin-right 0.5em
+		.params::before
+			content " "
+			background url('images/params.png')
+			-webkit-background-size cover
+			background-size cover
+			position relative
+			top 2px
+			float left
+			height 20px
+			width 20px
+			margin-right 0.5em
+.form_measure_description
+	col(.1875, offset: 1/16, gutter: 1/32)
+	font-size 1.86em
+	color form_font_grey
+	
+footer
+	padding 3em 0 1em 0
+	font-size 1.86em
+	
+	span
+		color form_font_grey
+		margin-left l-offset
+		
+	div
+		float right
+		a
+			color form_font_blue
+			padding-right 1em

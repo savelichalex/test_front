@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+	<img src="images/logo.png" alt="logo" id="logo">
+		<ul>
+			<li class="menu_button__notactive" value="10"><span>Пункт меню</span></li>
+			<li class="menu_button__active"><span>Выбранный пункт</span></li>
+		</ul>
+		<div class="menu__border"></div>
+	</header>
+	<div class="description">
+		<h3>Тестовое задание</h3>
+		<p>Ниже представлена часть интерфейса ЦУП (Центр управления продажами).</p>
+		<p>Кандидату предлагается сверстать адаптивный макет (HTML 5 + CSS 3) с поддержкой
+		ретина-дисплеев и написать необходимый для его работы JS.</p>
+	</div>
+	<div class="form">
+		<p class="form_description__top">Таргетирование анкеты по торговым точкам</p>
+		<ul class="form_lines">
+			<li id="region">
+				<span class="form_action">Регион:</span>
+				<div class="form_input tree">
+					<fieldset id="tree">
+          				<label class="big_region_title"><input type="checkbox"><span>Название большого региона</span></label>
+          				<fieldset>
+          					<label class="middle_region_title"><input type="checkbox"><span>Регион поменьше</span></label>
+                    		<fieldset>
+                            	<label class="middle_region_title"><input type="checkbox"><span>Маленький регион</span></label>
+                    			<label class="middle_region_title"><input type="checkbox"><span>Ещё один маленький регион</span></label>
+                    			<label class="middle_region_title"><input type="checkbox"><span>Третий маленький регион</span></label>
+                              	<fieldset>
+                              		<label class="little_region_title"><input type="checkbox"><span>Территория 1</span></label>
+                                    <label class="little_region_title"><input type="checkbox"><span>Вторая территория</span></label>
+                                    <label class="little_region_title"><input type="checkbox"><span>Ещё одна территория</span></label>
+                                    <label class="little_region_title"><input type="checkbox"><span>Четвертая</span></label>
+                                    <label class="little_region_title"><input type="checkbox"><span>Последняя территория</span></label>
+                              	</fieldset>
+                              	<label class="middle_region_title"><input type="checkbox"><span>Четвертый регион</span></label>
+                    		</fieldset>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Второй средний регион</span></label>
+          				</fieldset>
+          				<label class="big_region_title"><input type="checkbox"><span>Ещё один большой регион</span></label>
+          				<fieldset>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Маленький регион</span></label>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Ещё один маленький регион</span></label>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Третий маленький регион</span></label>
+          				</fieldset>
+          				<label class="big_region_title"><input type="checkbox"><span>Третий большой регион</span></label>
+          				<fieldset>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Маленький регион</span></label>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Ещё один маленький регион</span></label>
+                    		<label class="middle_region_title"><input type="checkbox"><span>Третий маленький регион</span></label>
+          				</fieldset>
+					</fieldset>
+				</div>
+				<div class="close"></div>
+				<div class="form_description__right">Выберите один или несколько регионов и/или территорий, где будет доступна анкета</div>
+			</li>
+			<li id="status">
+				<span class="form_action">Статус:</span>
+				<div class="form_input">
+					<select>
+						<option value="1">Открыта</option>
+						<option value="0">Закрыта</option>
+					</select>
+				</div>
+				<div class="close"></div>
+			</li>
+			<li id="tt">
+				<span class="form_action">Тип:</span>
+				<div class="form_input">
+					<input type="text">
+				</div>
+				<div class="close"></div>
+			</li>
+			<li id="params">
+				<span class="form_action">Параметр:</span>
+				<div class="form_input">
+					<select name="" id="">
+						<option value="0">равно</option>
+						<option value="-1">меньше</option>
+						<option value="1">больше</option>
+					</select>
+					<input type="text">
+				</div>
+				<div class="close"></div>
+			</li>
+		</ul>
+		<div class="form_measure">
+			<ul>
+				<li class="region">Регион и территория</li>
+				<li class="status">Статус</li>
+				<li class="tt">Тип ТТ</li>
+				<li class="params">Параметр</li>
+			</ul>
+			<div class="form_measure_description">Выберите критерии отбора вашей анкеты</div>
+		</div>
+	</div>
+	<footer>
+		<span>© «Первый БИТ», 2015</span>
+		<div>
+			<a href="#">Контактная информация</a>
+			<a href="#">Тех.поддержка</a>
+			<a href="#">Новости</a>
+		</div>
+	</footer>
+	<script>
+	//util functions
+	//without var that var's would be in global scope
+	(function() {
+		util = function() {
+			this._el = null
+		};
+		util.prototype.el = function() { return this._el; };
+		$ = function(el) {
+			var u = new util();
+			if(typeof el === 'string')
+				u._el = document.getElementById(el);
+			else
+				u._el = el;
+			return u;
+		};
+		$$ = function(el) {
+			var u = new util();
+			u._el = document.getElementsByClassName(el)[0];
+			return u;
+		};
+		util.prototype.style = function(prop, val) {
+			this._el.style[prop] = val;
+			return this;
+		};
+		util.prototype.on = function(event, cb) {
+			this._el.addEventListener(event, cb, false);
+		}
+	}());
+	</script>
+	<script>
+	(function() {
+		var initCriteria = function(triggerEl) {
+			var name = triggerEl.el().className,
+				el = $(name),
+				height = el.el().offsetHeight + 30; //TODO:30 is hardcode
+			el.style('height', height+'px');
+			triggerEl.on('click', function() {
+				el.style('height', height+'px');
+			});
+			el.el().getElementsByClassName('close')[0].addEventListener('click', function() {
+				el.style('height', '0px');
+			});
+		}
+		initCriteria($$('region'));
+		initCriteria($$('status'));
+		initCriteria($$('tt'));
+		initCriteria($$('params'));
+	}());
+	</script>
+	<script src="js/tree.js"></script>
+	<script>
+	Tree($('tree').el());
+	</script>
+</body>
+</html>
