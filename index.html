@@ -74,7 +74,7 @@
 			</li>
 			<li id="tt">
 				<span class="form_action">Тип:</span>
-				<div class="form_input">
+				<div id="tt_input">
 					<input type="text">
 				</div>
 				<div class="close"></div>
@@ -110,36 +110,7 @@
 			<a href="#">Новости</a>
 		</div>
 	</footer>
-	<script>
-	//util functions
-	//without var that var's would be in global scope
-	(function() {
-		util = function() {
-			this._el = null
-		};
-		util.prototype.el = function() { return this._el; };
-		$ = function(el) {
-			var u = new util();
-			if(typeof el === 'string')
-				u._el = document.getElementById(el);
-			else
-				u._el = el;
-			return u;
-		};
-		$$ = function(el) {
-			var u = new util();
-			u._el = document.getElementsByClassName(el)[0];
-			return u;
-		};
-		util.prototype.style = function(prop, val) {
-			this._el.style[prop] = val;
-			return this;
-		};
-		util.prototype.on = function(event, cb) {
-			this._el.addEventListener(event, cb, false);
-		}
-	}());
-	</script>
+	<script src="js/util.js"></script>
 	<script>
 	(function() {
 		var initCriteria = function(triggerEl) {
@@ -162,7 +133,24 @@
 	</script>
 	<script src="js/tree.js"></script>
 	<script>
-	Tree($('tree').el());
+		Tree($('tree').el());
+	</script>
+	<script src="js/tagger.js"></script>
+	<script>
+		var tag = Tagger($('tt_input'));
+
+		tag.set = ['Гипермаркет', 'Магазин'];
+		tag.showError = function(el) {
+			if(!this.errorDiv)
+			//this.errorDiv = $($(el).el().parentNode.parentNode).append('div').insertText('error').style('color', 'red');
+			alert('Некорретно введён тип. Пожалуйста, попробуйте снова.');
+		};
+		tag.cancelError = function(el) {
+			if(this.errorDiv) {
+				this.errorDiv.el().parentNode.removeChild(this.errorDiv.el());
+				this.errorDiv = void 0;
+			}
+		};
 	</script>
 </body>
 </html>
