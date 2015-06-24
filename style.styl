@@ -46,6 +46,8 @@ header
 		list-style none		
 		+mobile()
 			display none
+		+tablet()
+			margin 0
 	#logo
 		float left
 		margin-left l-offset
@@ -53,7 +55,7 @@ header
 		margin-right 1em
 		+mobile()
 			center()
-			width 50px
+			width 50px			
 
 	li
 		float: left
@@ -61,12 +63,16 @@ header
 		color white
 		padding 0.5em
 		margin 0.7em 1em 0 1em
-		cursor pointer
+		cursor pointer		
+		+tablet()
+			margin 0.5em 1em 0 1em
 	.menu_button__notactive
 		padding 0.5em 0 0 0
 		margin 0.7em 1.5em 0 1.5em
 		span
-			border-bottom 1px solid main_white
+			border-bottom 1px solid main_white		
+		+tablet()
+			margin 0.5em 1em 0 1em
 	.menu_button__notactive::after
 		content attr(value)
 		position relative
@@ -208,6 +214,8 @@ header
 			+mobile()
 				width 92%
 				margin 0
+			+tablet()
+				col(.4655, offset: .0333, gutter: 1)
 	
 			.form_tt_tag
 				float left
@@ -251,6 +259,8 @@ header
 				box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 				+mobile()
 					col(10/20, offset: 1/20)
+				+tablet()
+					col(.58, offset: .025)
 		.close
 			span(.022)
 			padding 1.1%
@@ -264,6 +274,9 @@ header
 				position absolute
 				padding 3.5%
 				left 92.5%
+			+tablet()
+				span(0.02)
+				padding 2%
 		.close:hover
 			background url(images/delete_sprite.png) 100% 0 no-repeat;
 			-webkit-background-size 200%
@@ -288,6 +301,7 @@ header
 		font-style italic
 		position absolute
 		top 2em
+		
 .error
 	col(.1875, offset: 1/16, gutter: 1/32)
 	font-size 1.86em
