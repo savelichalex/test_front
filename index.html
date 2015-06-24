@@ -7,6 +7,7 @@
 </head>
 <body>
 	<header>
+	<img src="images/button.png" id="menu_button">
 	<img src="images/logo.png" alt="logo" id="logo">
 		<ul>
 			<li class="menu_button__notactive" value="10"><span>Пункт меню</span></li>
@@ -24,7 +25,7 @@
 		<p class="form_description__top">Таргетирование анкеты по торговым точкам</p>
 		<ul class="form_lines">
 			<li id="region">
-				<span class="form_action">Регион:</span>
+				<span class="form_action form_action_region">Регион:</span>
 				<div class="form_input tree">
 					<fieldset id="tree">
           				<label class="big_region_title"><input type="checkbox"><span>Название большого региона</span></label>
@@ -143,11 +144,15 @@
 		tag.set = ['Гипермаркет', 'Магазин'];
 		tag.showError = function(el) {
 			if(!this.errorDiv)
-				this.errorDiv = $$('error').style('color', 'rgba(255,0,0,.3)');
+				this.errorDiv = $$('error')
+									.style('color', 'rgba(255,0,0,.3)')
+									.style('display', 'block');
 		};
 		tag.cancelError = function(el) {
 			if(this.errorDiv) {
-				this.errorDiv = $$('error').style('color', 'rgba(255,0,0,.0)');
+				this.errorDiv = $$('error')
+									.style('color', 'rgba(255,0,0,.0)')
+									.style('display', 'none');
 				this.errorDiv = void 0;
 			}
 		};

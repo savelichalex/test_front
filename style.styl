@@ -7,6 +7,7 @@
 	src url(fonts/PT-Sans/PTS55F.ttf)
 	
 l-offset = 3.125%
+l-offset-mobile = 5.15%
 main_grey = #656565
 main_darkgrey = #5A5A5A
 main_white = #a3a3a3
@@ -30,14 +31,30 @@ header
 	-webkit-box-shadow 0 1px 5px main_white
 	-moz-box-shadow 0 1px 5px main_white
 	box-shadow 0 1px 5px main_white
+	
+	#menu_button
+		display none		
+		+mobile()
+			display block
+			position absolute
+			width 38px
+			top 6px
+			left 5%
+			cursor pointer
 			
 	ul
-		list-style none	
+		list-style none		
+		+mobile()
+			display none
 	#logo
 		float left
 		margin-left l-offset
 		width 2*l-offset
-		margin-right 1em	
+		margin-right 1em
+		+mobile()
+			center()
+			width 50px
+
 	li
 		float: left
 		font-size 1.86em
@@ -85,14 +102,21 @@ header
 	col(.6875, offset: 1/32)
 	float: none
 	margin-bottom 4em
+	+mobile()
+		col(18/20, offset: 1/20)
 	
 	h3
 		font-size 3.6em
+		+mobile()
+			font-size 3em
+			margin 2em 0 0.5em 0
 		
 	p
 		font-size 1.86em
 		margin-top 0
 		margin-bottom 0
+		+mobile()
+			font-size 1.6em
 		
 .form
 	width 100%
@@ -105,6 +129,8 @@ header
 		padding 0
 		margin-top 0
 		margin-right 0
+		+mobile()
+			col(18/20, offset: 1/20)
 		
 		li
 			width 100%
@@ -115,13 +141,25 @@ header
 			-ms-transition height .5s
 			-o-transition height .5s
 			transition height .5s
+			+mobile()
+				position relative
 		
 		.form_action
 			span(.178)
 			font-size 1.86em
+			+mobile()
+				span(9/10)
+				padding-bottom 0.8em
+		.form_action_region
+			+mobile()
+				padding-bottom 4em
 		.form_input
 			col(.489, offset: .0333, gutter: 1)
 			font-size 1.86em
+			+mobile()
+				width 100%
+				margin 0
+				font-size 1.6em
 			
 			fieldset
 				border none
@@ -140,6 +178,8 @@ header
 			box-shadow inset 0 0 5px 0 rgba(0,0,0,.3);
 			overflow auto
 			line-height 1.7em
+			+mobile()
+				line-height 1.5em
 			
 			label
 				cursor pointer
@@ -165,6 +205,9 @@ header
 			-webkit-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 			-moz-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 			box-shadow inset 0 1px 10px rgba(0,0,0,.12)
+			+mobile()
+				width 92%
+				margin 0
 	
 			.form_tt_tag
 				float left
@@ -192,9 +235,13 @@ header
 		#status
 			select
 				span(.4)
+				+mobile()
+					span(1/2)
 		#params
 			select
 				span(.4)
+				+mobile()
+					span(9/20)
 			input
 				col(.583, offset: .025)
 				padding 7px 0
@@ -202,6 +249,8 @@ header
 				-webkit-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 				-moz-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 				box-shadow inset 0 1px 10px rgba(0,0,0,.12)
+				+mobile()
+					col(10/20, offset: 1/20)
 		.close
 			span(.022)
 			padding 1.1%
@@ -210,6 +259,11 @@ header
 			-webkit-background-size 200%
 			background-size 200%
 			cursor pointer
+			+mobile()
+				span(1/15)
+				position absolute
+				padding 3.5%
+				left 92.5%
 		.close:hover
 			background url(images/delete_sprite.png) 100% 0 no-repeat;
 			-webkit-background-size 200%
@@ -219,26 +273,47 @@ header
 	color form_font_grey
 	font-size 1.86em
 	margin-left l-offset
+	+mobile()
+		font-size 1.6em
+		margin-left l-offset-mobile
 	
 .form_description__right
 	col(.1875, offset: 1/16, gutter: 1/32)
 	font-size 1.86em
 	padding-bottom 0.3em
 	color form_font_grey
+	+mobile()
+		span(18/20)
+		font-size 1.4em
+		font-style italic
+		position absolute
+		top 2em
 .error
 	col(.1875, offset: 1/16, gutter: 1/32)
 	font-size 1.86em
 	padding-bottom 0.3em
 	color rgba(255,0,0,.0)
+	display none
+	+mobile()
+		width 100%
+		font-size 1.6em
+		margin 0 
+		color rgba(255,0,0,.0)
 .form_measure
 	width 100%
 	float left
 	border-top 2px dashed form_font_grey
 	padding 3em 0
 	cf()
+	+mobile()
+		position relative
+
 	ul
 		span(.679)
 		list-style none
+		+mobile()
+			col(18/20, offset: 1/20)
+			padding 0
 		li
 			width auto
 			float left
@@ -251,6 +326,9 @@ header
 			-moz-border-radius 5px
 			border-radius 5px
 			cursor pointer
+			+mobile()
+				font-size 1.6em
+				margin 0.5em 0.5em 0.1em 0
 		li:hover
 			background-color rgba(255,255,255,.7)
 		.region::before
@@ -264,6 +342,9 @@ header
 			height 20px
 			width 20px
 			margin-right 0.5em
+			+mobile()
+				height 17px
+				width 17px
 		.status::before
 			content " "
 			background-image url('images/status.png')
@@ -275,6 +356,9 @@ header
 			height 20px
 			width 20px
 			margin-right 0.5em
+			+mobile()
+				height 17px
+				width 17px
 		.tt::before
 			content " "
 			background-image url('images/tt.png')
@@ -286,6 +370,9 @@ header
 			height 20px
 			width 20px
 			margin-right 0.5em
+			+mobile()
+				height 17px
+				width 17px
 		.params::before
 			content " "
 			background url('images/params.png')
@@ -297,14 +384,26 @@ header
 			height 20px
 			width 20px
 			margin-right 0.5em
+			+mobile()
+				height 17px
+				width 17px
 .form_measure_description
 	col(.1875, offset: 1/16, gutter: 1/32)
 	font-size 1.86em
 	color form_font_grey
+	+mobile()
+		col(18/20, offset: 1/20)
+		position absolute
+		font-size 1.4em
+		font-style italic
+		top 1em
+		
 	
 footer
-	padding 3em 0 1em 0
+	padding 7em 0 1em 0
 	font-size 1.86em
+	+mobile()
+		position relative
 	
 	span
 		color form_font_grey
@@ -312,6 +411,12 @@ footer
 		
 	div
 		float right
+		+mobile()
+			position absolute
+			top 2em
+			left l-offset-mobile
 		a
 			color form_font_blue
 			padding-right 1em
+			+mobile()
+				stack()			
