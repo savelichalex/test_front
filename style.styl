@@ -166,7 +166,8 @@ header
 			+mobile()
 				padding-bottom 4em
 		.form_input
-			col(.489, offset: .0333, gutter: 1)
+			col(.49, offset: .0333, gutter: 1)
+			border 1px solid transparent
 			font-size 1.86em
 			+mobile()
 				width 100%
@@ -209,10 +210,10 @@ header
 				span
 					margin-left 0.5em
 		#tt_input
-			col(.4715, offset: .0333, gutter: 1)
+			col(.49, offset: .0333, gutter: 1)
 			font-size 1.86em
 			border 1px solid form_font_grey
-			padding 7px 10px
+			padding 7px 0
 			background-color #fff
 			-webkit-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
 			-moz-box-shadow inset 0 1px 10px rgba(0,0,0,.12)
@@ -231,7 +232,7 @@ header
 				-webkit-border-radius 3px
 				-moz-border-radius 3px
 				border-radius 3px
-				margin-right 10px
+				margin-left 10px
 				background-color rgba(229,229,229,.6)
 				
 				span
@@ -242,8 +243,9 @@ header
 	
 			input
 				border none
-				width 100%
-				font-size 20px	
+				width 97%
+				font-size 20px
+				padding-left 10px
 			input:focus
 				outline none
 		#status
@@ -257,7 +259,7 @@ header
 				+mobile()
 					span(9/20)
 			input
-				col(.583, offset: .025)
+				col(.5835, offset: .025)
 				padding 7px 0
 				border 1px solid form_font_grey				
 				-webkit-box-shadow inset 0 1px 10px rgba(0,0,0,.12)

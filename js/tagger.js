@@ -38,7 +38,7 @@ var Tagger = function(wrap) {
 			w1 = el.el().offsetWidth,
 			w2 = input.offsetWidth;
 
-		$(input).style('width', (w2 - w1 - 10) + 'px'); //10 is span margin-right
+		$(input).style('width', (w2 - w1 - 20) + 'px'); //20 is span margin-right and input padding
 
 		x.on('click', function() {
 			var w1 = this.offsetWidth,
