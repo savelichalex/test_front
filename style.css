@@ -194,6 +194,7 @@ th {
 body {
   font-size: 62.5%;
 }
+/* HEADER */
 header {
   *zoom: 1;
   background-color: #656565;
@@ -317,6 +318,7 @@ header .menu__border {
   border-top: 2px solid #a3a3a3;
   border-bottom: 1px solid #656565;
 }
+/* DESCRIPTION BLOCK */
 .description {
   *zoom: 1;
   float: left;
@@ -348,6 +350,7 @@ header .menu__border {
     width: 89.7%;
     margin-left: 5.15%;
     margin-right: 3%;
+    float: none;
   }
   .description:before,
   .description:after {
@@ -380,6 +383,7 @@ header .menu__border {
     font-size: 1.6em;
   }
 }
+/* FORM */
 .form {
   width: 100%;
   background-color: #f2ead1;
@@ -959,6 +963,7 @@ header .menu__border {
     color: rgba(255,0,0,0);
   }
 }
+/* FORM BUTTONS */
 .form_measure {
   width: 100%;
   float: left;
@@ -1170,6 +1175,7 @@ header .menu__border {
     margin-right: 0%;
   }
 }
+/* FOOTER */
 footer {
   padding: 7em 0 1em 0;
   font-size: 1.86em;
